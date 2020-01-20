@@ -9,31 +9,27 @@ $primary-color: rgb(0, 0, 0);
 body {
     background: $primary-color;
     font-size: 16px;
-
+    font-family: arial;
 }
 
 .wrapper {
     margin-top: 10px;
     margin-left: 10px;
-    background-color: rgb(0, 0, 0);
-    color: rgb(0, 0, 0);
     height: 300px;
     display: grid;
     grid-template-columns: 30% 55% 15%;
     // grid-gap: 1em;
 
-    div {
-        background: rgb(0, 0, 0);
-    }
 
 }
 
 
 .container {
     display: grid;
-    grid-template-columns: 35% 65%;
-    border: 2px red solid;
+    grid-template-columns: 40% 60%;
     height: 120px;
+    border: 3px solid rgb(130, 127, 86);
+    background: rgb(41, 7, 7);
 }
 
 
@@ -53,21 +49,33 @@ body {
 #character {
     text-align: center;
     position: relative;
-    background-color: rgba(42, 41, 41, 0.8);
+    top: 25px;
+    background-color: rgba(50, 50, 98, 0.8);
     color: rgb(156, 152, 89);
+    font-size: 0.7em;
+    height: 62px;
+    width: 98%;
+    border: 3px solid rgb(130, 127, 86);
+
+
+    & h2 {
+        border: 2px solid black;
+    }
 
 
     .bar {
         position: relative;
-        width: 100%;
-        height: 20px;
+        width: 98%;
+        height: 15px;
 
         &#health {
             background: green;
+            border: 2px solid black;
         }
 
         &#mana {
             background: blue;
+            border: 2px solid black;
         }
     }
 
@@ -81,12 +89,20 @@ body {
     background-color: white;
     color: rgb(130, 127, 86);
     border: 3px solid rgb(54, 54, 22);
-    background: rgb(28, 29, 22);
+    background: rgb(41, 7, 7);
+
+    h2 {
+        position: relative;
+        top: 5px;
+    }
 }
 
 #map {
     height: 150px;
     width: 150px;
-    border: 3px solid rgb(54, 54, 22);
+    border: 5px solid rgb(59, 54, 5);
     border-radius: 50%;
+    background-image: url("/../dist/images/svmap.PNG");
+    background-position: center;
+    background-size: contain;
 }
