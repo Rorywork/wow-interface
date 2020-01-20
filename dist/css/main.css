@@ -5,7 +5,8 @@
 body {
   background: black;
   font-size: 16px;
-  font-family: arial; }
+  font-family: arial;
+  background-image: url("https://render-eu.worldofwarcraft.com/character/blades-edge/25/144396569-main.jpg"); }
 
 .wrapper {
   margin-top: 10px;
@@ -94,19 +95,14 @@ body {
 #map {
   height: 150px;
   width: 150px;
-  border: 5px solid #3b3605;
+  border: 5px solid #827f56;
   border-radius: 50%;
   background-image: url("/../dist/images/svmap.PNG");
   background-position: center;
   background-size: contain; }
 
 #intro {
-  display: inline;
-  position: absolute;
-  top: 200px; }
-  #intro img {
-    height: 70vh;
-    width: 100vw; }
+  top: 250px; }
   #intro #speech-bubble {
     color: #b9b88c;
     position: absolute;
@@ -115,7 +111,7 @@ body {
     top: 20%;
     left: 30%;
     padding: 15px;
-    border: 1px solid #474545;
+    border: 1px solid #827f56;
     border-radius: 10px; }
     #intro #speech-bubble p {
       font-size: 1.2rem; }
@@ -128,50 +124,72 @@ body {
 
 main {
   visibility: hidden;
-  background: #1d1b1b;
   height: 60vh;
   display: grid;
-  grid-template-columns: 60% 35%;
-  padding-top: 50px; }
+  grid-template-columns: 60% 35%; }
   main #tradescreen {
+    border: 3px solid #827f56;
     display: grid;
     grid-template-columns: 50% 50%;
-    height: 500px; }
-    main #tradescreen div {
-      border: 1px black solid; }
-      main #tradescreen div .title {
-        background: #290707; }
-      main #tradescreen div img {
-        height: 100px;
-        border: 3px solid #827f56;
-        border-radius: 50%; }
-      main #tradescreen div h1 {
-        display: inline;
-        text-align: center;
-        position: relative;
-        top: -40px;
-        left: 70px;
-        color: #827f56; }
-      main #tradescreen div .trade-box {
-        height: 100px;
-        display: grid;
-        grid-template-columns: 30% 70%; }
-        main #tradescreen div .trade-box .item {
-          border: 1px solid gold;
-          border-radius: 10px;
-          background: radial-gradient(black 15%, transparent 16%) 0 0, radial-gradient(black 15%, transparent 16%) 8px 8px, radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 0 1px, radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 8px 9px;
-          background-color: #282828;
-          background-size: 16px 16px; }
-        main #tradescreen div .trade-box .description {
-          border: 1px solid #978888;
-          border-radius: 10px;
-          background: #070707; }
+    margin-left: 10px;
+    background: #290707; }
+    main #tradescreen div .title {
+      background: #290707;
+      position: relative; }
+      main #tradescreen div .title i {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        font-size: 2rem;
+        color: #860707; }
+        main #tradescreen div .title i:hover {
+          cursor: pointer;
+          color: red; }
+    main #tradescreen div img {
+      height: 100px;
+      border: 3px solid #827f56;
+      border-radius: 50%; }
+    main #tradescreen div h1 {
+      display: inline;
+      text-align: center;
+      position: relative;
+      top: -40px;
+      left: 70px;
+      color: #827f56; }
+    main #tradescreen div .trade-box {
+      height: 100px;
+      display: grid;
+      grid-template-columns: 30% 70%; }
+      main #tradescreen div .trade-box .item {
+        border: 1px solid gold;
+        border-radius: 10px;
+        background: radial-gradient(black 15%, transparent 16%) 0 0, radial-gradient(black 15%, transparent 16%) 8px 8px, radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 0 1px, radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 8px 9px;
+        background-color: #282828;
+        background-size: 16px 16px; }
+      main #tradescreen div .trade-box .description {
+        border: 1px solid #827f56;
+        border-radius: 10px;
+        background: #070707; }
+    main #tradescreen div .trading-btn {
+      color: white;
+      font-size: 1.5rem;
+      width: 200px;
+      height: 50px;
+      border: 3px solid white;
+      cursor: pointer; }
+      main #tradescreen div .trading-btn#trade {
+        background: green;
+        float: right; }
+      main #tradescreen div .trading-btn#clear {
+        background: #b8b8b8; }
 
 .toolbar-wrapper {
-  height: 10vh;
+  height: 15vh;
   display: grid;
   grid-template-columns: 5% 40% 30% 20% 5%;
-  grid-gap: 1em; }
+  grid-gap: 1em;
+  background: rgba(0, 0, 0, 0.5);
+  padding-top: 20px; }
   .toolbar-wrapper .spells {
     position: relative;
     left: 20px;
@@ -181,3 +199,34 @@ main {
     top: 20px;
     height: 60px;
     border: 2px solid gold; }
+  .toolbar-wrapper #backpack:hover {
+    cursor: pointer; }
+  .toolbar-wrapper #satchel:hover {
+    cursor: pointer; }
+
+#backpack-space {
+  z-index: 2;
+  visibility: hidden;
+  text-align: center;
+  background: white;
+  height: 300px;
+  width: 250px;
+  position: relative;
+  top: 10%;
+  left: 35%;
+  border: 3px solid black; }
+  #backpack-space h1 {
+    background: #290707;
+    color: white;
+    font-size: 1rem;
+    padding: 15px; }
+  #backpack-space #backpack-open {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    border: 1px solid black;
+    background-color: black; }
+    #backpack-space #backpack-open div {
+      height: 50px;
+      border: 1px solid gold;
+      border-radius: 10px;
+      background-color: #282828; }

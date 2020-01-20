@@ -96,6 +96,9 @@
 
                     <div class="description">Test</div>
                 </div>
+                <button id="clear" class="trading-btn">Clear</button>
+                <button id="clear" class="trading-btn">Offer</button>
+
 
             </div>
 
@@ -104,6 +107,7 @@
 
             <div>
                 <div class="title">
+                    <i id="closeTrade" onclick="closeTrade()" class=" fas fa-times"></i>
                     <img src="images/dwarfina.PNG" alt="">
                     <h1>Dwarfina</h1>
                 </div>
@@ -134,14 +138,73 @@
 
                     <div class="description">Test</div>
                 </div>
+
+                <button id="trade" class="trading-btn">Trade</button>
+
             </div>
 
         </div>
 
 
+        <div id="backpack-space">
+            <h1>Backpack</h1>
 
-        <div>
+            <div id="backpack-open">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
 
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+
+
+            </div>
+
+            <h1>Satchel</h1>
+
+            <div id="backpack-open">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+
+
+
+
+            </div>
 
         </div>
 
@@ -153,8 +216,6 @@
 
     <div id="intro">
 
-        <img id="large-dwarfina" src="https://render-eu.worldofwarcraft.com/character/blades-edge/25/144396569-main.jpg"
-            alt="">
         <div id="speech-bubble">
             <p> Hello Eskau would you like to trade some items?
                 <i onclick="openTrade()" id="trade-btn" class="fas fa-sync-alt"></i>
@@ -163,6 +224,8 @@
         </div>
 
     </div>
+
+
 
 
 
@@ -205,6 +268,7 @@
         <div>
 
             <img onclick="openBag()" id="backpack" class="mini-images" src="images/backpack.PNG" alt="Backpack">
+            <img onclick="openBag()" id="satchel" class="mini-images" src="images/satchel.PNG" alt="Backpack">
 
 
         </div>

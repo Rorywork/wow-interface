@@ -1,4 +1,6 @@
 $primary-color: rgb(0, 0, 0);
+$secondary-color: rgb(41, 7, 7);
+$tertiary-color: rgb(130, 127, 86);
 
 
 * {
@@ -10,6 +12,7 @@ body {
     background: $primary-color;
     font-size: 16px;
     font-family: arial;
+    background-image: url("https://render-eu.worldofwarcraft.com/character/blades-edge/25/144396569-main.jpg");
 }
 
 .wrapper {
@@ -18,9 +21,6 @@ body {
     height: 20vh;
     display: grid;
     grid-template-columns: 30% 55% 15%;
-    // grid-gap: 1em;
-
-
 }
 
 
@@ -29,7 +29,7 @@ body {
     grid-template-columns: 40% 60%;
     height: 120px;
     border: 3px solid rgb(130, 127, 86);
-    background: rgb(41, 7, 7);
+    background: $secondary-color;
 }
 
 
@@ -37,7 +37,7 @@ body {
     position: relative;
     height: 100px;
     width: 100px;
-    border: 3px solid rgb(130, 127, 86);
+    border: 3px solid $tertiary-color;
     border-radius: 50%;
     top: 5px;
     left: 20px;
@@ -51,9 +51,9 @@ body {
         background-color: rgb(0, 0, 0);
         position: relative;
         top: 75%;
-        border: 3px solid rgb(130, 127, 86);
+        border: 3px solid $tertiary-color;
         border-radius: 50%;
-        color: rgb(130, 127, 86);
+        color: $tertiary-color;
 
         p {
             font-size: 0.8rem;
@@ -73,7 +73,7 @@ body {
     font-size: 0.7em;
     height: 62px;
     width: 98%;
-    border: 3px solid rgb(130, 127, 86);
+    border: 3px solid $tertiary-color;
 
 
     & h2 {
@@ -116,9 +116,9 @@ body {
     width: 150px;
     height: 30px;
     background-color: white;
-    color: rgb(130, 127, 86);
+    color: $tertiary-color;
     border: 3px solid rgb(54, 54, 22);
-    background: rgb(41, 7, 7);
+    background: $secondary-color;
 
     h2 {
         position: relative;
@@ -129,7 +129,7 @@ body {
 #map {
     height: 150px;
     width: 150px;
-    border: 5px solid rgb(59, 54, 5);
+    border: 5px solid $tertiary-color;
     border-radius: 50%;
     background-image: url("/../dist/images/svmap.PNG");
     background-position: center;
@@ -138,15 +138,7 @@ body {
 
 
 #intro {
-    display: inline;
-    position: absolute;
-    top: 200px;
-
-    img {
-        height: 70vh;
-        width: 100vw;
-
-    }
+    top: 250px;
 
     #speech-bubble {
         color: rgb(185, 184, 140);
@@ -156,7 +148,7 @@ body {
         top: 20%;
         left: 30%;
         padding: 15px;
-        border: 1px solid rgb(71, 69, 69);
+        border: 1px solid $tertiary-color;
         border-radius: 10px;
 
         p {
@@ -179,27 +171,40 @@ body {
 
 main {
     visibility: hidden;
-    background: rgb(29, 27, 27);
     height: 60vh;
     display: grid;
     grid-template-columns: 60% 35%;
-    padding-top: 50px;
 
     #tradescreen {
+        border: 3px solid $tertiary-color;
         display: grid;
         grid-template-columns: 50% 50%;
-        height: 500px;
+        margin-left: 10px;
+        background: $secondary-color;
 
         div {
-            border: 1px rgb(0, 0, 0) solid;
 
             .title {
-                background: rgb(41, 7, 7);
+                background: $secondary-color;
+                position: relative;
+
+                i {
+                    position: absolute;
+                    top: 5px;
+                    right: 5px;
+                    font-size: 2rem;
+                    color: rgb(134, 7, 7);
+
+                    &:hover {
+                        cursor: pointer;
+                        color: rgb(255, 0, 0);
+                    }
+                }
             }
 
             img {
                 height: 100px;
-                border: 3px solid rgb(130, 127, 86);
+                border: 3px solid $tertiary-color;
                 border-radius: 50%;
 
             }
@@ -210,7 +215,7 @@ main {
                 position: relative;
                 top: -40px;
                 left: 70px;
-                color: rgb(130, 127, 86);
+                color: $tertiary-color;
             }
 
             .trade-box {
@@ -231,20 +236,41 @@ main {
                 }
 
                 .description {
-                    border: 1px solid rgb(151, 136, 136);
+                    border: 1px solid $tertiary-color;
                     border-radius: 10px;
                     background: rgb(7, 7, 7);
                 }
+            }
+
+            .trading-btn {
+                color: rgb(255, 255, 255);
+                font-size: 1.5rem;
+                width: 200px;
+                height: 50px;
+                border: 3px solid white;
+                cursor: pointer;
+
+                &#trade {
+                    background: rgb(0, 128, 0);
+                    float: right;
+                }
+
+                &#clear {
+                    background: rgb(184, 184, 184);
+                }
+
             }
         }
     }
 }
 
 .toolbar-wrapper {
-    height: 10vh;
+    height: 15vh;
     display: grid;
     grid-template-columns: 5% 40% 30% 20% 5%;
     grid-gap: 1em;
+    background: rgba(0, 0, 0, 0.5);
+    padding-top: 20px;
 
 
 
@@ -259,5 +285,50 @@ main {
         top: 20px;
         height: 60px;
         border: 2px solid gold;
+    }
+
+    #backpack:hover {
+        cursor: pointer;
+    }
+
+    #satchel:hover {
+        cursor: pointer;
+    }
+}
+
+#backpack-space {
+    z-index: 2;
+    visibility: hidden;
+    text-align: center;
+    background: white;
+    height: 300px;
+    width: 250px;
+    position: relative;
+    top: 10%;
+    left: 35%;
+    border: 3px solid black;
+
+    h1 {
+        background: $secondary-color;
+        color: white;
+        font-size: 1rem;
+        padding: 15px;
+    }
+
+
+    #backpack-open {
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        border: 1px solid black;
+        background-color: black;
+
+
+
+        div {
+            height: 50px;
+            border: 1px solid gold;
+            border-radius: 10px;
+            background-color: #282828;
+        }
     }
 }
