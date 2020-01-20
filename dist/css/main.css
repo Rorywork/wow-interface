@@ -163,9 +163,10 @@ main {
       main #tradescreen div .trade-box .item {
         border: 1px solid gold;
         border-radius: 10px;
-        background: radial-gradient(black 15%, transparent 16%) 0 0, radial-gradient(black 15%, transparent 16%) 8px 8px, radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 0 1px, radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 8px 9px;
-        background-color: #282828;
-        background-size: 16px 16px; }
+        background: #252525;
+        background-size: 16px 16px;
+        background-image: none;
+        visibility: visible; }
       main #tradescreen div .trade-box .description {
         border: 1px solid #827f56;
         border-radius: 10px;
@@ -227,6 +228,13 @@ main {
     background-color: black; }
     #backpack-space #backpack-open div {
       height: 50px;
-      border: 1px solid gold;
+      border: 1px solid black;
       border-radius: 10px;
       background-color: #282828; }
+      #backpack-space #backpack-open div img {
+        height: 50px;
+        width: 55px;
+        border-radius: 10px; }
+        #backpack-space #backpack-open div img:hover {
+          cursor: pointer;
+          border: solid 1px gold; }
