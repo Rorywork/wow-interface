@@ -100,11 +100,38 @@ body {
   background-position: center;
   background-size: contain; }
 
+.intro {
+  visibility: visible;
+  position: absolute;
+  top: 200px; }
+  .intro img {
+    height: 70vh;
+    width: 100vw; }
+  .intro #speech-bubble {
+    color: #b9b88c;
+    position: absolute;
+    text-align: center;
+    background-color: black;
+    top: 20%;
+    left: 30%;
+    padding: 15px;
+    border: 1px solid #474545;
+    border-radius: 10px; }
+    .intro #speech-bubble p {
+      font-size: 1.2rem; }
+      .intro #speech-bubble p i {
+        color: green;
+        margin-left: 5px; }
+        .intro #speech-bubble p i:hover {
+          color: #3cff00;
+          cursor: pointer; }
+
 main {
+  visibility: hidden;
   background: #1d1b1b;
   height: 60vh;
   display: grid;
-  grid-template-columns: 5% 60% 35%;
+  grid-template-columns: 60% 35%;
   padding-top: 50px; }
   main #tradescreen {
     display: grid;
