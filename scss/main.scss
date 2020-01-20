@@ -137,8 +137,8 @@ body {
 }
 
 
-.intro {
-    visibility: visible;
+#intro {
+    display: inline;
     position: absolute;
     top: 200px;
 

@@ -54,7 +54,7 @@
 
     </div>
 
-    <main>
+    <main id="tradingInterface">
 
 
 
@@ -151,15 +151,13 @@
     </main>
 
 
-    <div class="intro">
-
-
+    <div id="intro">
 
         <img id="large-dwarfina" src="https://render-eu.worldofwarcraft.com/character/blades-edge/25/144396569-main.jpg"
             alt="">
         <div id="speech-bubble">
             <p> Hello Eskau would you like to trade some items?
-                <i class="fas fa-sync-alt"></i>
+                <i onclick="openTrade()" id="trade-btn" class="fas fa-sync-alt"></i>
             </p>
 
         </div>
@@ -206,7 +204,7 @@
 
         <div>
 
-            <img class="mini-images" src="images/backpack.PNG" alt="Backpack">
+            <img onclick="openBag()" id="backpack" class="mini-images" src="images/backpack.PNG" alt="Backpack">
 
 
         </div>
@@ -219,7 +217,7 @@
     </div>
 
 
-
+    <script src="js/main.js"></script>
 </body>
 
 </html>
