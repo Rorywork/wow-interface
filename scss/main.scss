@@ -99,9 +99,35 @@ body {
 
 }
 
+#capsule {
+    display: grid;
+    grid-template-columns: 75% 25%;
+}
+
+
+#ability {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    width: 300px;
+    margin: 0 auto;
+    position: relative;
+    top: 50px;
+
+    h1 {
+        position: relative;
+        float: right;
+        right: 20px;
+        top: 20px;
+    }
+
+    p {
+        margin-left: 5px;
+    }
+}
+
+
 #spells-container {
     float: right;
-    margin-right: 40px;
 
     img {
         position: relative;
@@ -109,6 +135,8 @@ body {
         height: 30px;
     }
 }
+
+
 
 #map-header {
     font-size: 0.7em;

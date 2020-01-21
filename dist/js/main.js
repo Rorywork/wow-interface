@@ -5,8 +5,13 @@ const intro = document.getElementById("intro");
 const backPack = document.getElementById("backpack-space");
 const snapper = document.getElementsByClassName("snapper");
 
+
+
 const tradeItems = document.getElementsByClassName("item");
 const newItems = document.getElementsByClassName("itemx");
+
+
+const ability = document.getElementById("ability");
 
 // Items that can be traded
 
@@ -54,25 +59,33 @@ let myItems = [
     "Lane Snapper",
     "lSnapper",
     "url('/../dist/images/lane-snapper.PNG')",
-    false
+    "images/lane-snapper.PNG",
+    false,
+    111
   ],
   [
     "Firelord's Robes",
     "fRobes",
     "url('/../dist/images/firelord-robes.PNG')",
-    false
+    "images/firelord-robes.PNG",
+    false,
+    60
   ],
   [
     "Demon Stalker Greathelm",
     "dSHelm",
     "url('/../dist/images/demon-stalker-helm.PNG')",
-    false
+    "images/demon-stalker-helm.PNG",
+    false,
+    80
   ],
   [
     "Lashtail Hatchling",
     "lHatchling",
     "url('/../dist/images/lashtail-hatchling.PNG')",
-    false
+    "images/lashtail-hatchling.PNG",
+    false,
+    25
   ]
 ];
 
@@ -81,25 +94,33 @@ let herItems = [
     "Lane Snapper",
     "lSnapper",
     "url('/../dist/images/lane-snapper.PNG')",
-    false
+    "images/lane-snapper.PNG",
+    false,
+    111
   ],
   [
     "Firelord's Robes",
     "fRobes",
     "url('/../dist/images/firelord-robes.PNG')",
-    false
+    "images/firelord-robes.PNG",
+    false,
+    60,
   ],
   [
     "Demon Stalker Greathelm",
     "dSHelm",
     "url('/../dist/images/demon-stalker-helm.PNG')",
-    false
+    "images/demon-stalker-helm.PNG",
+    false,
+    80,
   ],
   [
     "Lashtail Hatchling",
     "lHatchling",
     "url('/../dist/images/lashtail-hatchling.PNG')",
-    false
+    "images/lashtail-hatchling.PNG",
+    false,
+    25
   ]
 ];
 
@@ -209,22 +230,56 @@ function offer() {
   tradeBtn.style.backgroundColor = "green";
 }
 
-// function builder() {
-//   console.log(tradeItems);
-//   console.log(tradeItems[0]);
 
-//   for (i = 0; i < tradeItems.length; i++) {
-//     style = getComputedStyle(tradeItems[i]);
 
-//     if (style.backgroundImage === "none") {
-//       console.log("success");
-//       tradeItems[i].style.backgroundImage =
-//         "url('/../dist/images/lane-snapper.PNG')";
-//       tradeItems[i].style.backgroundPosition = "center";
-//       tradeItems[i].style.backgroundRepeat = "no-repeat";
-//       tradeItems[i].style.backgroundSize = "cover";
-//     }
 
-//     break;
-//   }
-// }
+
+
+function showInfo(item_hover) {
+  console.log("Show info working");
+  console.log(item_hover);
+
+  for (i = 0; i < myItems.length; i++) {
+    let item = myItems[i];
+
+    for (j = 0; j < item.length; j++) {
+      if (item[j] === item_hover) {
+        console.log("We have a match!");
+        console.log(item);
+
+
+        let elem = document.createElement("img");
+        ability.appendChild(elem);
+        elem.src = item[3];
+
+        let title = document.createElement("H1");
+        ability.appendChild(title);
+        title.textContent = item[0];
+        title.style.fontSize = "1.2rem";
+        title.style.position = "relative";
+        title.style.float = "right";
+        title.style.right = "50px";
+        title.style.top = "20px";
+
+        let level = document.createElement("p");
+        ability.appendChild(level);
+        level.textContent = "Item Level " + item[5];
+        level.style.marginLeft = "100px";
+        level.style.color = "gold";
+        level.style.position = "relative";
+        level.style.float = "right";
+        level.style.right = "50px";
+
+      }
+    }
+  }
+
+
+
+
+
+
+
+
+
+}
