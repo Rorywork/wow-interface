@@ -232,6 +232,15 @@ main {
 
                 }
 
+                .itemx {
+                    border: 1px solid gold;
+                    border-radius: 10px;
+                    background: #252525;
+                    background-size: 16px 16px;
+                    background-image: none;
+
+                }
+
                 .description {
                     border: 1px solid $tertiary-color;
                     border-radius: 10px;
@@ -241,6 +250,7 @@ main {
 
             .trading-btn {
                 color: rgb(255, 255, 255);
+                background-color: $secondary-color;
                 font-size: 1.5rem;
                 width: 200px;
                 height: 50px;
@@ -248,7 +258,6 @@ main {
                 cursor: pointer;
 
                 &#trade {
-                    background: rgb(0, 128, 0);
                     float: right;
                 }
 

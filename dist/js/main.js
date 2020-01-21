@@ -6,6 +6,7 @@ const backPack = document.getElementById("backpack-space");
 const snapper = document.getElementsByClassName("snapper");
 
 const tradeItems = document.getElementsByClassName("item");
+const newItems = document.getElementsByClassName("itemx");
 
 // Items that can be traded
 
@@ -66,6 +67,39 @@ let myItems = [
     "dSHelm",
     "url('/../dist/images/demon-stalker-helm.PNG')",
     false
+  ],
+  [
+    "Lashtail Hatchling",
+    "lHatchling",
+    "url('/../dist/images/lashtail-hatchling.PNG')",
+    false
+  ]
+];
+
+let herItems = [
+  [
+    "Lane Snapper",
+    "lSnapper",
+    "url('/../dist/images/lane-snapper.PNG')",
+    false
+  ],
+  [
+    "Firelord's Robes",
+    "fRobes",
+    "url('/../dist/images/firelord-robes.PNG')",
+    false
+  ],
+  [
+    "Demon Stalker Greathelm",
+    "dSHelm",
+    "url('/../dist/images/demon-stalker-helm.PNG')",
+    false
+  ],
+  [
+    "Lashtail Hatchling",
+    "lHatchling",
+    "url('/../dist/images/lashtail-hatchling.PNG')",
+    false
   ]
 ];
 
@@ -122,6 +156,24 @@ function placeItem(url) {
       tradeItems[i].style.backgroundPosition = "center";
       tradeItems[i].style.backgroundRepeat = "no-repeat";
       tradeItems[i].style.backgroundSize = "cover";
+      setTimeout(theTrade, 500);
+
+      break;
+    }
+  }
+}
+
+function theTrade() {
+  for (i = 0; i < newItems.length; i++) {
+    let stylex = getComputedStyle(newItems[i]);
+    if (stylex.backgroundImage === "none") {
+      newItems[i].style.backgroundImage =
+        herItems[Math.floor(Math.random() * 3 + 1)][2];
+      newItems[i].style.backgroundPosition = "center";
+      newItems[i].style.backgroundRepeat = "no-repeat";
+      newItems[i].style.backgroundSize = "cover";
+
+      break;
     }
   }
 }
@@ -134,6 +186,27 @@ function clearTrade() {
       tradeItems[i].style.backgroundImage = "none";
     }
   }
+
+  for (i = 0; i < newItems.length; i++) {
+    let stylex = getComputedStyle(newItems[i]);
+
+    if (stylex.backgroundImage != "none") {
+      newItems[i].style.backgroundImage = "none";
+    }
+  }
+
+  for (i = 0; i < tradeItems.length; i++) {
+    tradeItems[i].style.border = "1px solid gold";
+  }
+}
+
+function offer() {
+  console.log("hello offer");
+
+  for (i = 0; i < tradeItems.length; i++) {
+    tradeItems[i].style.border = "3px solid blue";
+  }
+  tradeBtn.style.backgroundColor = "green";
 }
 
 // function builder() {

@@ -166,19 +166,25 @@ main {
         background: #252525;
         background-size: 16px 16px;
         background-image: none; }
+      main #tradescreen div .trade-box .itemx {
+        border: 1px solid gold;
+        border-radius: 10px;
+        background: #252525;
+        background-size: 16px 16px;
+        background-image: none; }
       main #tradescreen div .trade-box .description {
         border: 1px solid #827f56;
         border-radius: 10px;
         background: #070707; }
     main #tradescreen div .trading-btn {
       color: white;
+      background-color: #290707;
       font-size: 1.5rem;
       width: 200px;
       height: 50px;
       border: 3px solid white;
       cursor: pointer; }
       main #tradescreen div .trading-btn#trade {
-        background: green;
         float: right; }
       main #tradescreen div .trading-btn#clear {
         background: #b8b8b8; }
