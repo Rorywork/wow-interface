@@ -96,7 +96,7 @@
 
                     <div class="description">Test</div>
                 </div>
-                <button id="clear" class="trading-btn">Clear</button>
+                <button onclick="clearTrade()" id="clear" class="trading-btn">Clear</button>
                 <button id="clear" class="trading-btn">Offer</button>
 
 
@@ -152,13 +152,16 @@
 
             <div id="backpack-open">
                 <div>
-                    <img class="items" id="snapper" src="images/lane-snapper.PNG" alt="Lane Snapper">
+                    <img onclick="clickItem('lSnapper')" class="items" id="lSnapper" src="images/lane-snapper.PNG"
+                        alt="Lane Snapper">
                 </div>
                 <div>
-                    <img class="items" src="images/firelord-robes.PNG" alt="Firelord's Robes">
+                    <img id="fRobes" onclick="clickItem('fRobes')" class="items" src="images/firelord-robes.PNG"
+                        alt="Firelord's Robes">
                 </div>
                 <div>
-                    <img class="items" src="images/demon-stalker-helm.PNG" alt="Demon Stalker Greathelm">
+                    <img id="dSHelm" onclick="clickItem('dSHelm')" class="items" src="images/demon-stalker-helm.PNG"
+                        alt="Demon Stalker Greathelm">
                 </div>
                 <div></div>
 
