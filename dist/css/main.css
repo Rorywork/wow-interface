@@ -165,8 +165,7 @@ main {
         border-radius: 10px;
         background: #252525;
         background-size: 16px 16px;
-        background-image: none;
-        visibility: visible; }
+        background-image: none; }
       main #tradescreen div .trade-box .description {
         border: 1px solid #827f56;
         border-radius: 10px;
