@@ -10,49 +10,12 @@ const snapper = document.getElementsByClassName("snapper");
 const tradeItems = document.getElementsByClassName("item");
 const newItems = document.getElementsByClassName("itemx");
 
-
 const ability = document.getElementById("ability");
 
-// Items that can be traded
+const elem = document.createElement("img");
+const title = document.createElement("H1");
+const level = document.createElement("p");
 
-// function Item(name, id, level, quantity, value, image, clicked) {
-//   this.name = name;
-//   this.id = id;
-//   this.level = level;
-//   this.quantity = quantity;
-//   this.value = value;
-//   this.image = image;
-//   this.clicked = clicked;
-// }
-
-// let laneSnapper = new Item(
-//   "Lane Snapper",
-//   "lSnapper",
-//   111,
-//   200,
-//   0.6,
-//   "url('/../dist/images/lane-snapper.PNG')",
-//   false
-// );
-// let firelordsRobes = new Item(
-//   "Firelord's Robes",
-//   "fRobes",
-//   2,
-//   108,
-//   1,
-//   17.48,
-//   "url('/../dist/images/firelord-robes.PNG')",
-//   false
-// );
-// let demonStalkerGreathelm = new Item(
-//   "Demon Stalker Greathelm",
-//   "dSHelm",
-//   80,
-//   1,
-//   5.32,
-//   "url('/../dist/images/demon-stalker-helm.PNG')",
-//   false
-// );
 
 let myItems = [
   [
@@ -230,10 +193,12 @@ function offer() {
   tradeBtn.style.backgroundColor = "green";
 }
 
-
-
-
-
+function removeInfos() {
+  console.log("Working");
+  ability.removeChild(elem);
+  ability.removeChild(title);
+  ability.removeChild(level);
+}
 
 function showInfo(item_hover) {
   console.log("Show info working");
@@ -248,11 +213,10 @@ function showInfo(item_hover) {
         console.log(item);
 
 
-        let elem = document.createElement("img");
+
         ability.appendChild(elem);
         elem.src = item[3];
 
-        let title = document.createElement("H1");
         ability.appendChild(title);
         title.textContent = item[0];
         title.style.fontSize = "1.2rem";
@@ -261,7 +225,6 @@ function showInfo(item_hover) {
         title.style.right = "50px";
         title.style.top = "20px";
 
-        let level = document.createElement("p");
         ability.appendChild(level);
         level.textContent = "Item Level " + item[5];
         level.style.marginLeft = "100px";
@@ -273,6 +236,7 @@ function showInfo(item_hover) {
       }
     }
   }
+
 
 
 
