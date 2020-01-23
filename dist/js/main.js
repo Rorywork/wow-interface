@@ -196,21 +196,37 @@ function placeItem(url) {
 }
 
 function theTrade() {
-  for (l = 0; l < newItems.length; l++) {
-    let stylex = getComputedStyle(newItems[l]);
-    if (stylex.backgroundImage === "none") {
-      let randNo = Math.floor(Math.random() * 7);
+  let l = 0;
 
-      newItems[l].style.backgroundImage = herItems[randNo][2];
-      newItems[l].style.backgroundPosition = "center";
-      newItems[l].style.backgroundRepeat = "no-repeat";
-      newItems[l].style.backgroundSize = "cover";
-      console.log(randNo);
-      break;
-    }
+  while (getComputedStyle(newItems[l]).backgroundImage != "none") {
+    l++;
   }
+
+  let randNo = Math.floor(Math.random() * 7);
+  newItems[l].style.backgroundImage = herItems[randNo][2];
+  newItems[l].style.backgroundPosition = "center";
+  newItems[l].style.backgroundRepeat = "no-repeat";
+  newItems[l].style.backgroundSize = "cover";
+  console.log(randNo);
   return;
 }
+
+// function theTrade() {
+//   for (l = 0; l < newItems.length; l++) {
+//     let stylex = getComputedStyle(newItems[l]);
+//     if (stylex.backgroundImage === "none") {
+//       let randNo = Math.floor(Math.random() * 7);
+
+//       newItems[l].style.backgroundImage = herItems[randNo][2];
+//       newItems[l].style.backgroundPosition = "center";
+//       newItems[l].style.backgroundRepeat = "no-repeat";
+//       newItems[l].style.backgroundSize = "cover";
+//       console.log(randNo);
+//       break;
+//     }
+//   }
+//   return;
+// }
 
 function clearTrade() {
   for (i = 0; i < tradeItems.length; i++) {
