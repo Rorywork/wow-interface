@@ -5,8 +5,6 @@ const intro = document.getElementById("intro");
 const backPack = document.getElementById("backpack-space");
 const snapper = document.getElementsByClassName("snapper");
 
-
-
 const tradeItems = document.getElementsByClassName("item");
 const newItems = document.getElementsByClassName("itemx");
 
@@ -15,7 +13,6 @@ const ability = document.getElementById("ability");
 const elem = document.createElement("img");
 const title = document.createElement("H1");
 const level = document.createElement("p");
-
 
 let myItems = [
   [
@@ -49,6 +46,30 @@ let myItems = [
     "images/lashtail-hatchling.PNG",
     false,
     25
+  ],
+  [
+    "Raw Longjaw Mud Snapper",
+    "lMSnapper",
+    "url('/../dist/images/longjaw-mud-snapper.PNG')",
+    "images/longjaw-mud-snapper.PNG",
+    false,
+    15
+  ],
+  [
+    "Sword of a Thousand Truths",
+    "sTTruths",
+    "url('/../dist/images/sword-of-truths.PNG')",
+    "images/sword-of-truths.PNG",
+    false,
+    2
+  ],
+  [
+    "Herod's Shoulder",
+    "hShoulder",
+    "url('/../dist/images/herods-shoulder.PNG')",
+    "images/herods-shoulder.PNG",
+    false,
+    50
   ]
 ];
 
@@ -67,7 +88,7 @@ let herItems = [
     "url('/../dist/images/firelord-robes.PNG')",
     "images/firelord-robes.PNG",
     false,
-    60,
+    60
   ],
   [
     "Demon Stalker Greathelm",
@@ -75,7 +96,7 @@ let herItems = [
     "url('/../dist/images/demon-stalker-helm.PNG')",
     "images/demon-stalker-helm.PNG",
     false,
-    80,
+    80
   ],
   [
     "Lashtail Hatchling",
@@ -84,6 +105,30 @@ let herItems = [
     "images/lashtail-hatchling.PNG",
     false,
     25
+  ],
+  [
+    "Raw Longjaw Mud Snapper",
+    "lMSnapper",
+    "url('/../dist/images/longjaw-mud-snapper.PNG')",
+    "images/longjaw-mud-snapper.PNG",
+    false,
+    15
+  ],
+  [
+    "Sword of a Thousand Truths",
+    "sTTruths",
+    "url('/../dist/images/sword-of-truths.PNG')",
+    "images/sword-of-truths.PNG",
+    false,
+    2
+  ],
+  [
+    "Herod's Shoulder",
+    "hShoulder",
+    "url('/../dist/images/herods-shoulder.PNG')",
+    "images/herods-shoulder.PNG",
+    false,
+    50
   ]
 ];
 
@@ -131,35 +176,40 @@ function placeItem(url) {
   console.log("Working");
   console.log(tradeItems);
 
-  for (i = 0; i < tradeItems.length; i++) {
-    let style = getComputedStyle(tradeItems[i]);
+  for (k = 0; k < tradeItems.length; k++) {
+    let style = getComputedStyle(tradeItems[k]);
 
     if (style.backgroundImage === "none") {
       console.log("success");
-      tradeItems[i].style.backgroundImage = url;
-      tradeItems[i].style.backgroundPosition = "center";
-      tradeItems[i].style.backgroundRepeat = "no-repeat";
-      tradeItems[i].style.backgroundSize = "cover";
+      tradeItems[k].style.backgroundImage = url;
+      tradeItems[k].style.backgroundPosition = "center";
+      tradeItems[k].style.backgroundRepeat = "no-repeat";
+      tradeItems[k].style.backgroundSize = "cover";
       setTimeout(theTrade, 500);
+
+      console.log(k);
 
       break;
     }
   }
+  return;
 }
 
 function theTrade() {
-  for (i = 0; i < newItems.length; i++) {
-    let stylex = getComputedStyle(newItems[i]);
+  for (l = 0; l < newItems.length; l++) {
+    let stylex = getComputedStyle(newItems[l]);
     if (stylex.backgroundImage === "none") {
-      newItems[i].style.backgroundImage =
-        herItems[Math.floor(Math.random() * 3 + 1)][2];
-      newItems[i].style.backgroundPosition = "center";
-      newItems[i].style.backgroundRepeat = "no-repeat";
-      newItems[i].style.backgroundSize = "cover";
+      let randNo = Math.floor(Math.random() * 7);
 
+      newItems[l].style.backgroundImage = herItems[randNo][2];
+      newItems[l].style.backgroundPosition = "center";
+      newItems[l].style.backgroundRepeat = "no-repeat";
+      newItems[l].style.backgroundSize = "cover";
+      console.log(randNo);
       break;
     }
   }
+  return;
 }
 
 function clearTrade() {
@@ -200,6 +250,37 @@ function removeInfos() {
   ability.removeChild(level);
 }
 
+// Splits string into two lines for long item names
+function stringSplit(string) {
+  let new_string = "";
+  let words = string.split(" ");
+
+  if (words.length === 3) {
+    new_string = words[0] + " " + words[1] + "<br>" + words[2];
+    console.log(new_string);
+    return new_string;
+  } else if (words.length === 4) {
+    new_string = words[0] + " " + words[1] + "<br>" + words[2] + " " + words[3];
+    return new_string;
+  } else if (words.length === 5) {
+    new_string =
+      words[0] +
+      " " +
+      words[1] +
+      " " +
+      words[2] +
+      "<br>" +
+      words[3] +
+      " " +
+      words[4];
+    return new_string;
+  } else {
+    console.log(string);
+    return string;
+  }
+}
+
+// Shows the item information at the top of page when hovered over
 function showInfo(item_hover) {
   console.log("Show info working");
   console.log(item_hover);
@@ -212,13 +293,11 @@ function showInfo(item_hover) {
         console.log("We have a match!");
         console.log(item);
 
-
-
         ability.appendChild(elem);
         elem.src = item[3];
 
         ability.appendChild(title);
-        title.textContent = item[0];
+        title.innerHTML = stringSplit(item[0]);
         title.style.fontSize = "1.2rem";
         title.style.position = "relative";
         title.style.float = "right";
@@ -232,18 +311,7 @@ function showInfo(item_hover) {
         level.style.position = "relative";
         level.style.float = "right";
         level.style.right = "50px";
-
       }
     }
   }
-
-
-
-
-
-
-
-
-
-
 }
