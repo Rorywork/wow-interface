@@ -7,6 +7,7 @@ const snapper = document.getElementsByClassName("snapper");
 
 const tradeItems = document.getElementsByClassName("item");
 const newItems = document.getElementsByClassName("itemx");
+const satchelItems = document.getElementsByClassName("satchel-items");
 
 const ability = document.getElementById("ability");
 
@@ -133,19 +134,19 @@ let herItems = [
 ];
 
 function openTrade() {
-  console.log("Open Trade btn working");
+  // console.log("Open Trade btn working");
   intro.style.display = "none";
   tradeBox.style.visibility = "visible";
 }
 
 function closeTrade() {
-  console.log("Close trade btn working");
+  // console.log("Close trade btn working");
   tradeBox.style.visibility = "hidden";
   intro.style.display = "inline";
 }
 
 function openBag() {
-  console.log("bag function working");
+  // console.log("bag function working");
 
   if (backPack.style.visibility === "visible") {
     backPack.style.visibility = "hidden";
@@ -155,17 +156,17 @@ function openBag() {
 }
 
 function clickItem(item_clicked) {
-  console.log(item_clicked);
+  // console.log(item_clicked);
 
   for (i = 0; i < myItems.length; i++) {
     let item = myItems[i];
 
     for (j = 0; j < item.length; j++) {
       if (item[j] === item_clicked) {
-        console.log("We have a match!");
-        console.log(item);
+        // console.log("We have a match!");
+        // console.log(item);
         let url = item[2];
-        console.log(url);
+        // console.log(url);
         placeItem(url);
       }
     }
@@ -173,26 +174,20 @@ function clickItem(item_clicked) {
 }
 
 function placeItem(url) {
-  console.log("Working");
-  console.log(tradeItems);
+  let k = 0;
 
-  for (k = 0; k < tradeItems.length; k++) {
-    let style = getComputedStyle(tradeItems[k]);
-
-    if (style.backgroundImage === "none") {
-      console.log("success");
-      tradeItems[k].style.backgroundImage = url;
-      tradeItems[k].style.backgroundPosition = "center";
-      tradeItems[k].style.backgroundRepeat = "no-repeat";
-      tradeItems[k].style.backgroundSize = "cover";
-      setTimeout(theTrade, 500);
-
-      console.log(k);
-
-      break;
-    }
+  while (getComputedStyle(newItems[k]).backgroundImage != "none") {
+    k++;
   }
-  return;
+
+  // console.log("success");
+  tradeItems[k].style.backgroundImage = url;
+  tradeItems[k].style.backgroundPosition = "center";
+  tradeItems[k].style.backgroundRepeat = "no-repeat";
+  tradeItems[k].style.backgroundSize = "cover";
+  setTimeout(theTrade, 500);
+
+  // console.log(k);
 }
 
 function theTrade() {
@@ -207,26 +202,9 @@ function theTrade() {
   newItems[l].style.backgroundPosition = "center";
   newItems[l].style.backgroundRepeat = "no-repeat";
   newItems[l].style.backgroundSize = "cover";
-  console.log(randNo);
+  // console.log(randNo);
   return;
 }
-
-// function theTrade() {
-//   for (l = 0; l < newItems.length; l++) {
-//     let stylex = getComputedStyle(newItems[l]);
-//     if (stylex.backgroundImage === "none") {
-//       let randNo = Math.floor(Math.random() * 7);
-
-//       newItems[l].style.backgroundImage = herItems[randNo][2];
-//       newItems[l].style.backgroundPosition = "center";
-//       newItems[l].style.backgroundRepeat = "no-repeat";
-//       newItems[l].style.backgroundSize = "cover";
-//       console.log(randNo);
-//       break;
-//     }
-//   }
-//   return;
-// }
 
 function clearTrade() {
   for (i = 0; i < tradeItems.length; i++) {
@@ -250,17 +228,28 @@ function clearTrade() {
   }
 }
 
-function offer() {
-  console.log("hello offer");
+// function offer() {
+//   console.log("hello offer");
 
-  for (i = 0; i < tradeItems.length; i++) {
+//   for (i = 0; i < tradeItems.length; i++) {
+//     tradeItems[i].style.border = "3px solid blue";
+//   }
+//   tradeBtn.style.backgroundColor = "green";
+// }
+
+function offer() {
+  i = 0;
+
+  while (getComputedStyle(tradeItems[i]).backgroundImage != "none") {
     tradeItems[i].style.border = "3px solid blue";
+    i++;
   }
+
   tradeBtn.style.backgroundColor = "green";
 }
 
 function removeInfos() {
-  console.log("Working");
+  // console.log("Working");
   ability.removeChild(elem);
   ability.removeChild(title);
   ability.removeChild(level);
@@ -273,7 +262,7 @@ function stringSplit(string) {
 
   if (words.length === 3) {
     new_string = words[0] + " " + words[1] + "<br>" + words[2];
-    console.log(new_string);
+    // console.log(new_string);
     return new_string;
   } else if (words.length === 4) {
     new_string = words[0] + " " + words[1] + "<br>" + words[2] + " " + words[3];
@@ -291,23 +280,23 @@ function stringSplit(string) {
       words[4];
     return new_string;
   } else {
-    console.log(string);
+    // console.log(string);
     return string;
   }
 }
 
 // Shows the item information at the top of page when hovered over
 function showInfo(item_hover) {
-  console.log("Show info working");
-  console.log(item_hover);
+  // console.log("Show info working");
+  // console.log(item_hover);
 
   for (i = 0; i < myItems.length; i++) {
     let item = myItems[i];
 
     for (j = 0; j < item.length; j++) {
       if (item[j] === item_hover) {
-        console.log("We have a match!");
-        console.log(item);
+        // console.log("We have a match!");
+        // console.log(item);
 
         ability.appendChild(elem);
         elem.src = item[3];
@@ -331,3 +320,57 @@ function showInfo(item_hover) {
     }
   }
 }
+
+// const tradeItems = document.getElementsByClassName("item");
+// const newItems = document.getElementsByClassName("itemx");
+
+function executeTrade() {
+  console.log("Execute Trade working");
+
+  n = 0;
+
+  while (getComputedStyle(tradeItems[n]).backgroundImage != "none") {
+    console.log(getComputedStyle(tradeItems[n]).backgroundImage);
+    let theItem = getComputedStyle(tradeItems[n]).backgroundImage;
+    loopSatchel(theItem);
+    n++;
+  }
+}
+
+// i = 0;
+
+// while (getComputedStyle(tradeItems[i]).backgroundImage != "none") {
+//   tradeItems[i].style.border = "3px solid blue";
+//   i++;
+// }
+
+// const satchelItems = document.getElementsByClassName("satchel-items");
+
+function loopSatchel(theItem) {
+  console.log("loop satchel working");
+
+  o = 0;
+
+  while (getComputedStyle(satchelItems[o]).backgroundImage != "none") {
+    o++;
+  }
+
+  satchelItems[o].style.backgroundImage = theItem;
+  satchelItems[o].style.backgroundPosition = "center";
+  satchelItems[o].style.backgroundRepeat = "no-repeat";
+  satchelItems[o].style.backgroundSize = "cover";
+}
+
+//   for (o = 0; o < satchelItems.length; o++) {
+//     console.log(satchelItems[o]);
+
+//     if (getComputedStyle(satchelItems[o]).backgroundImage === "none") {
+//       console.log("Great Success");
+//       satchelItems[o].style.backgroundImage = theItem;
+//       satchelItems[o].style.backgroundPosition = "center";
+//       satchelItems[o].style.backgroundRepeat = "no-repeat";
+//       satchelItems[o].style.backgroundSize = "cover";
+//       return;
+//     }
+//   }
+// }
