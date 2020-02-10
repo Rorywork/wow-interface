@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hello World</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <div class="container">
+
+            <div id="avatar">
+                <div id="level">
+                    <p>46</p>
+                </div>
+            </div>
+
+            <div id="character">
+                <h2>Eskau</h2>
+                <div class="bar" id="health"></div>
+                <div class="bar" id="mana"></div>
+            </div>
+
+
+        </div>
+
+        <div>
+
+            <div id="capsule">
+
+                <div id="ability">
+
+
+
+                </div>
+
+
+                <div id="spells-container">
+                    <img src="images/shadow.PNG" alt="Shadow Spell">
+                    <img src="images/firespell.PNG" alt="Fire Spell">
+                    <img src="images/travelspell.PNG" alt="Travel Spell">
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+        <div>
+            <div id="map-header">
+                <h2>Stranglethorn Vale</h2>
+            </div>
+            <div id="map">
+
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+
+    <main id="tradingInterface">
+
+
+
+
+
+
+
+        <div id="tradescreen">
+
+            <div>
+                <div class="title">
+                    <img src="images/eskau.PNG" alt="">
+                    <h1>Eskau</h1>
+                </div>
+                <div class="trade-box">
+
+                    <div class="item"></div>
+
+                    <div class="description">Test</div>
+
+                </div>
+                <div class="trade-box">
+                    <div class="item"></div>
+
+                    <div class="description">Test</div>
+                </div>
+                <div class="trade-box">
+                    <div class="item"></div>
+
+                    <div class="description">Test</div>
+                </div>
+                <div class="trade-box">
+                    <div class="item"></div>
+
+                    <div class="description">Test</div>
+                </div>
+                <div class="trade-box">
+                    <div class="item"></div>
+
+                    <div class="description">Test</div>
+                </div>
+                <button onclick="clearTrade()" id="clear" class="trading-btn">Clear</button>
+                <button onclick="offer()" id="offer" class="trading-btn">Offer</button>
+
+
+            </div>
+
+
+
+
+            <div>
+                <div class="title">
+                    <i id="closeTrade" onclick="closeTrade()" class=" fas fa-times"></i>
+                    <img src="images/dwarfina.PNG" alt="">
+                    <h1>Dwarfina</h1>
+                </div>
+                <div class="trade-box">
+
+                    <div class="itemx"></div>
+
+                    <div class="description">Test</div>
+
+                </div>
+                <div class="trade-box">
+                    <div class="itemx"></div>
+
+                    <div class="description">Test</div>
+                </div>
+                <div class="trade-box">
+                    <div class="itemx"></div>
+
+                    <div class="description">Test</div>
+                </div>
+                <div class="trade-box">
+                    <div class="itemx"></div>
+
+                    <div class="description">Test</div>
+                </div>
+                <div class="trade-box">
+                    <div class="itemx"></div>
+
+                    <div class="description">Test</div>
+                </div>
+
+                <button onclick="executeTrade()" id="tradeBtn" class="trading-btn">Trade</button>
+
+            </div>
+
+        </div>
+
+
+
+        <div id="backpack-space">
+            <h1>Backpack</h1>
+
+            <div id="backpack-open">
+                <div>
+                    <img onmouseout="removeInfos()" onmouseover="showInfo('lSnapper')" onclick="clickItem('lSnapper')"
+                        class="items" id="lSnapper" src="images/lane-snapper.PNG" alt="Lane Snapper">
+                </div>
+                <div>
+                    <img onmouseout="removeInfos()" onmouseover="showInfo('fRobes')" id="fRobes"
+                        onclick="clickItem('fRobes')" class="items" src="images/firelord-robes.PNG"
+                        alt="Firelord's Robes">
+                </div>
+                <div>
+                    <img onmouseout="removeInfos()" onmouseover="showInfo('dSHelm')" id="dSHelm"
+                        onclick="clickItem('dSHelm')" class="items" src="images/demon-stalker-helm.PNG"
+                        alt="Demon Stalker Greathelm">
+                </div>
+                <div> <img onmouseout="removeInfos()" onmouseover="showInfo('lHatchling')" id="lHatchling"
+                        onclick="clickItem('lHatchling')" class="items" src="images/lashtail-hatchling.PNG"
+                        alt="Lashtail Hatchling"></div>
+
+                <div><img onmouseout="removeInfos()" onmouseover="showInfo('lMSnapper')" id="lMSnapper"
+                        onclick="clickItem('lMSnapper')" class="items" src="images/longjaw-mud-snapper.PNG"
+                        alt="Snapper">
+                </div>
+                <div><img onmouseout="removeInfos()" onmouseover="showInfo('sTTruths')" id="sTTruths"
+                        onclick="clickItem('sTTruths')" class="items" src="images/sword-of-truths.PNG"
+                        alt="Sword of A Thousand Truths"></div>
+                <div><img onmouseout="removeInfos()" onmouseover="showInfo('hShoulder')" id="hShoulder"
+                        onclick="clickItem('hShoulder')" class="items" src="images/herods-shoulder.PNG"
+                        alt="Herod's Shoulder"></div>
+                <div></div>
+
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+
+
+            </div>
+
+            <h1>Satchel</h1>
+
+            <div id="backpack-open">
+                <div class="satchel-items"></div>
+                <div class="satchel-items"></div>
+                <div class="satchel-items"></div>
+                <div class="satchel-items"></div>
+
+                <div class="satchel-items"></div>
+                <div class="satchel-items"></div>
+                <div class="satchel-items"></div>
+                <div class="satchel-items"></div>
+
+                <div class="satchel-items"></div>
+                <div class="satchel-items"></div>
+                <div class="satchel-items"></div>
+                <div class="satchel-items"></div>
+
+
+
+
+
+            </div>
+
+            <button onclick="builder()">test</button>
+
+        </div>
+
+
+
+
+    </main>
+
+
+    <div id="intro">
+
+        <div id="speech-bubble">
+            <p> Hello Eskau would you like to trade some items?
+                <i onclick="openTrade()" id="trade-btn" class="fas fa-sync-alt"></i>
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="toolbar-wrapper">
+
+        <div>
+
+        </div>
+
+
+        <div class="spells">
+            <img src="images/shadow.PNG" alt="Shadow Spell">
+            <img src="images/firespell.PNG" alt="Fire Spell">
+            <img src="images/travelspell.PNG" alt="Travel Spell">
+            <img src="images/shadow.PNG" alt="Shadow Spell">
+            <img src="images/firespell.PNG" alt="Fire Spell">
+            <img src="images/travelspell.PNG" alt="Travel Spell">
+            <img src="images/shadow.PNG" alt="Shadow Spell">
+
+
+        </div>
+
+
+        <div>
+            <img class="mini-images" src="images/book.PNG" alt="Spellbook">
+            <img class="mini-images" src="images/book.PNG" alt="Spellbook">
+            <img class="mini-images" src="images/book.PNG" alt="Spellbook">
+            <img class="mini-images" src="images/book.PNG" alt="Spellbook">
+            <img class="mini-images" src="images/book.PNG" alt="Spellbook">
+
+
+
+        </div>
+
+
+        <div>
+
+            <img onclick="openBag()" id="backpack" class="mini-images" src="images/backpack.PNG" alt="Backpack">
+            <img onclick="openBag()" id="satchel" class="mini-images" src="images/satchel.PNG" alt="Backpack">
+
+
+        </div>
+
+
+        <div>
+
+        </div>
+        <button onclick="stringSplit('Demon Stalker Helm')"></button>
+    </div>
+
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

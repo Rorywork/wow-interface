@@ -1,0 +1,263 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  background: black;
+  font-size: 16px;
+  font-family: arial;
+  background-image: url("https://render-eu.worldofwarcraft.com/character/blades-edge/25/144396569-main.jpg"); }
+
+.wrapper {
+  margin-top: 10px;
+  margin-left: 10px;
+  height: 20vh;
+  display: grid;
+  grid-template-columns: 30% 55% 15%; }
+
+.container {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  height: 120px;
+  border: 3px solid #827f56;
+  background: #290707; }
+
+#avatar {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  border: 3px solid #827f56;
+  border-radius: 50%;
+  top: 5px;
+  left: 20px;
+  background-image: url("/../dist/images/eskau.PNG");
+  background-position: center;
+  background-size: contain; }
+  #avatar #level {
+    height: 25px;
+    width: 25px;
+    background-color: black;
+    position: relative;
+    top: 75%;
+    border: 3px solid #827f56;
+    border-radius: 50%;
+    color: #827f56; }
+    #avatar #level p {
+      font-size: 0.8rem;
+      text-align: center;
+      position: relative;
+      top: 5px; }
+
+#character {
+  text-align: center;
+  position: relative;
+  top: 25px;
+  background-color: rgba(50, 50, 98, 0.8);
+  color: #9c9859;
+  font-size: 0.7em;
+  height: 62px;
+  width: 98%;
+  border: 3px solid #827f56; }
+  #character h2 {
+    border: 2px solid black; }
+  #character .bar {
+    position: relative;
+    width: 98%;
+    height: 15px; }
+    #character .bar#health {
+      background: green;
+      border: 2px solid black; }
+    #character .bar#mana {
+      background: blue;
+      border: 2px solid black; }
+
+#capsule {
+  display: grid;
+  grid-template-columns: 75% 25%; }
+
+#ability {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+  width: 300px;
+  margin: 0 auto;
+  position: relative;
+  top: 50px; }
+  #ability h1 {
+    position: relative;
+    float: right;
+    right: 20px;
+    top: 20px; }
+  #ability p {
+    margin-left: 5px; }
+
+#spells-container {
+  float: right; }
+  #spells-container img {
+    position: relative;
+    top: 15px;
+    height: 30px; }
+
+#map-header {
+  font-size: 0.7em;
+  text-align: center;
+  width: 150px;
+  height: 30px;
+  background-color: white;
+  color: #827f56;
+  border: 3px solid #363616;
+  background: #290707; }
+  #map-header h2 {
+    position: relative;
+    top: 5px; }
+
+#map {
+  height: 150px;
+  width: 150px;
+  border: 5px solid #827f56;
+  border-radius: 50%;
+  background-image: url("/../dist/images/svmap.PNG");
+  background-position: center;
+  background-size: contain; }
+
+#intro {
+  top: 250px; }
+  #intro #speech-bubble {
+    color: #b9b88c;
+    position: absolute;
+    text-align: center;
+    background-color: black;
+    top: 20%;
+    left: 30%;
+    padding: 15px;
+    border: 1px solid #827f56;
+    border-radius: 10px; }
+    #intro #speech-bubble p {
+      font-size: 1.2rem; }
+      #intro #speech-bubble p i {
+        color: green;
+        margin-left: 5px; }
+        #intro #speech-bubble p i:hover {
+          color: #3cff00;
+          cursor: pointer; }
+
+main {
+  visibility: hidden;
+  height: 60vh;
+  display: grid;
+  grid-template-columns: 60% 35%; }
+  main #tradescreen {
+    border: 3px solid #827f56;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-left: 10px;
+    background: #290707; }
+    main #tradescreen div .title {
+      background: #290707;
+      position: relative; }
+      main #tradescreen div .title i {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        font-size: 2rem;
+        color: #860707; }
+        main #tradescreen div .title i:hover {
+          cursor: pointer;
+          color: red; }
+    main #tradescreen div img {
+      height: 100px;
+      border: 3px solid #827f56;
+      border-radius: 50%; }
+    main #tradescreen div h1 {
+      display: inline;
+      text-align: center;
+      position: relative;
+      top: -40px;
+      left: 70px;
+      color: #827f56; }
+    main #tradescreen div .trade-box {
+      height: 100px;
+      display: grid;
+      grid-template-columns: 30% 70%; }
+      main #tradescreen div .trade-box .item {
+        border: 1px solid gold;
+        border-radius: 10px;
+        background: #252525;
+        background-size: 16px 16px;
+        background-image: none; }
+      main #tradescreen div .trade-box .itemx {
+        border: 1px solid gold;
+        border-radius: 10px;
+        background: #252525;
+        background-size: 16px 16px;
+        background-image: none; }
+      main #tradescreen div .trade-box .description {
+        border: 1px solid #827f56;
+        border-radius: 10px;
+        background: #070707; }
+    main #tradescreen div .trading-btn {
+      color: white;
+      background-color: #290707;
+      font-size: 1.5rem;
+      width: 200px;
+      height: 50px;
+      border: 3px solid white;
+      cursor: pointer; }
+      main #tradescreen div .trading-btn#trade {
+        float: right; }
+      main #tradescreen div .trading-btn#clear {
+        background: #b8b8b8; }
+
+.toolbar-wrapper {
+  height: 15vh;
+  display: grid;
+  grid-template-columns: 5% 40% 30% 20% 5%;
+  grid-gap: 1em;
+  background: rgba(0, 0, 0, 0.5);
+  padding-top: 20px; }
+  .toolbar-wrapper .spells {
+    position: relative;
+    left: 20px;
+    top: 20px; }
+  .toolbar-wrapper .mini-images {
+    position: relative;
+    top: 20px;
+    height: 60px;
+    border: 2px solid gold; }
+  .toolbar-wrapper #backpack:hover {
+    cursor: pointer; }
+  .toolbar-wrapper #satchel:hover {
+    cursor: pointer; }
+
+#backpack-space {
+  z-index: 2;
+  visibility: hidden;
+  text-align: center;
+  background: white;
+  height: 300px;
+  width: 250px;
+  position: relative;
+  top: 10%;
+  left: 35%;
+  border: 3px solid black; }
+  #backpack-space h1 {
+    background: #290707;
+    color: white;
+    font-size: 1rem;
+    padding: 15px; }
+  #backpack-space #backpack-open {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    border: 1px solid black;
+    background-color: black; }
+    #backpack-space #backpack-open div {
+      height: 50px;
+      border: 1px solid black;
+      border-radius: 10px;
+      background-color: #282828; }
+      #backpack-space #backpack-open div img {
+        height: 50px;
+        width: 55px;
+        border-radius: 10px; }
+        #backpack-space #backpack-open div img:hover {
+          cursor: pointer;
+          border: solid 1px gold; }
