@@ -30,7 +30,7 @@ body {
   border-radius: 50%;
   top: 5px;
   left: 20px;
-  background-image: url("/../dist/images/eskau.PNG");
+  background-image: url("../images/eskau.PNG");
   background-position: center;
   background-size: contain; }
   #avatar #level {
@@ -115,7 +115,7 @@ body {
   width: 150px;
   border: 5px solid #827f56;
   border-radius: 50%;
-  background-image: url("/../dist/images/svmap.PNG");
+  background-image: url("../images/svmap.PNG");
   background-position: center;
   background-size: contain; }
 
